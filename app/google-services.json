@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "191246983464",
+    "project_id": "nizar-project-b5611",
+    "storage_bucket": "nizar-project-b5611.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191246983464:android:18ae2335b007f70d05b01d",
+        "android_client_info": {
+          "package_name": "com.example.nizarsproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191246983464-44mqm0tdnimu3icsj7pbv3dljrh6ovf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEl8vuTahE1KTwauUj5QcHexqQ9J1Ys9g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191246983464-44mqm0tdnimu3icsj7pbv3dljrh6ovf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

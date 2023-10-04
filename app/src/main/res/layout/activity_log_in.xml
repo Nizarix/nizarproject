@@ -7,44 +7,57 @@
     tools:context=".LogInActivity">
 
     <EditText
-        android:id="@+id/ETemail"
+        android:id="@+id/LoginEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="100dp"
+        android:layout_marginStart="102dp"
         android:layout_marginTop="76dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/ETpassword"
+        android:id="@+id/Loginpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="101dp"
+        android:layout_marginStart="101dp"
         android:layout_marginTop="30dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ETemail" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginEmail" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/NewAccLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="134dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="222dp"
         android:text="Don't have an account?"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="526dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginButton" />
 
     <Button
-        android:id="@+id/BTlogin2"
+        android:id="@+id/LoginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="165dp"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="60dp"
         android:text="Log In"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="240dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Loginpassword" />
 
     <TextView
         android:id="@+id/TVerorr"
@@ -55,13 +68,5 @@
         android:visibility="gone"
         tools:layout_editor_absoluteX="135dp"
         tools:layout_editor_absoluteY="208dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create one"
-        tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="557dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

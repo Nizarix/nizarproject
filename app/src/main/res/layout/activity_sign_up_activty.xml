@@ -7,61 +7,86 @@
     tools:context=".SignUpActivty">
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/nameSignUp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="101dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="112dp"
         android:ems="10"
         android:hint="Full name"
         android:inputType="text"
         android:minHeight="48dp"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="112dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/EmailSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="99dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="23dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="183dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameSignUp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/PasswordSign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="101dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="37dp"
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="268dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailSignUp"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/rePasswordSign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="100dp"
+        android:layout_marginStart="102dp"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="Confirm password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordSign" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="160dp"
         android:layout_marginStart="160dp"
+        android:layout_marginTop="68dp"
         android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="460dp"
+        app:layout_constraintTop_toBottomOf="@+id/rePasswordSign"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/ErorrSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="167dp"
+        tools:layout_editor_absoluteY="578dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
