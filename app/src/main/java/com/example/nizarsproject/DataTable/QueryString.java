@@ -24,9 +24,7 @@ public class QueryString {
             "CREATE TABLE " + SaleTable.TABLE_SALE + " (" +
                     SaleTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     SaleTable.COLUMN_SALE_PROD_ID + " INTEGER," +
-                    SaleTable.COLUMN_SALE_USER_ID + " TEXT,"+
-                    SaleTable.COLUMN_SALE_PRICE + " DOUBLE,"+
-                    SaleTable.COLUMN_BUY_PRICE + " DOUBLE);";
+                    SaleTable.COLUMN_SALE_USER_ID + " TEXT);";
 
     //endregions
 

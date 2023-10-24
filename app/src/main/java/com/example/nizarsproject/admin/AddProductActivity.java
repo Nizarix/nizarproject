@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.nizarsproject.DataTable.DBHelper;
 import com.example.nizarsproject.R;
-import com.example.nizarsproject.classes.product;
+import com.example.nizarsproject.classes.Product0;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
     EditText etname,etdisc,etstock,etsaleprice,etbuyprice;
     ImageButton imageButton;
     Button btadd;
-    product.product p;
+    Product p;
     Uri selectedImageUri;
     DBHelper dbHelper;
     ProgressBar addItemProgressBar;
@@ -55,7 +55,7 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
             dbHelper = new DBHelper(this);
 
             byte[] data  = imageViewToByte();
-            p=new product.product(etname.getText().toString(),etdisc.getText().toString(),
+            p=new Product(etname.getText().toString(),etdisc.getText().toString(),
                     Integer.parseInt(etstock.getText().toString()),
                     Double.parseDouble(etsaleprice.getText().toString()),
                     Double.parseDouble(etbuyprice.getText().toString()),data);
