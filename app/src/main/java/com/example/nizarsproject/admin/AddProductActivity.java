@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -15,7 +16,7 @@ import android.widget.Toast;
 
 import com.example.nizarsproject.DataTable.DBHelper;
 import com.example.nizarsproject.R;
-import com.example.nizarsproject.classes.Product0;
+import com.example.nizarsproject.classes.Product;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -94,4 +95,14 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
             imageButton.setImageURI(selectedImageUri);
         }
     }
+
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        selectedcategory = categorys[i];
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
 }
