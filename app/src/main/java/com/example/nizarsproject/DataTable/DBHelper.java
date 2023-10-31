@@ -39,7 +39,6 @@ public  class DBHelper {
         @Override
         public void onCreate(SQLiteDatabase sqLiteDatabase) {
             //sqLiteDatabase.execSQL(SQL_CREATE_PRODUCT);
-
         }
 
         @Override

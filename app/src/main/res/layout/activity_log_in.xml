@@ -9,7 +9,7 @@
     <EditText
         android:id="@+id/LoginEmail"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginEnd="100dp"
         android:layout_marginStart="102dp"
         android:layout_marginTop="76dp"
@@ -23,7 +23,7 @@
     <EditText
         android:id="@+id/Loginpassword"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginEnd="101dp"
         android:layout_marginStart="101dp"
         android:layout_marginTop="30dp"
@@ -62,11 +62,13 @@
     <TextView
         android:id="@+id/TVerorr"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="411dp"
         android:text="Account Doesnt Exit"
         android:textColor="#C60000"
         android:visibility="gone"
-        tools:layout_editor_absoluteX="135dp"
-        tools:layout_editor_absoluteY="208dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

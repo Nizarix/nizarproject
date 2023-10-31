@@ -1,5 +1,8 @@
 package com.example.nizarsproject;
 
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,32 +11,43 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
 import com.google.firebase.auth.UserProfileChangeRequest;
 
-public class SignUpActivty extends AppCompatActivity {
-   EditText fullNameEditText;
-   EditText emailEditText;
-   EditText passwordEditText;
-   EditText repasswordEditText;
-   Button registerButton;
-   TextView errorText;
+
+
+public class SignUpActivty extends AppCompatActivity{
+    EditText fullNameEditText,emailEditText,passwordEditText,repasswordEditText;
+    //change
+    EditText admincode;
+    Button registerButton;
+    //change
+    Switch isadmin;
+    TextView errorText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_activty);
-        fullNameEditText=findViewById(R.id.nameSignUp);
-        emailEditText=findViewById(R.id.EmailSignUp);
-        passwordEditText=findViewById(R.id.PasswordSign);
-        repasswordEditText=findViewById(R.id.rePasswordSign);
-        registerButton=findViewById(R.id.buttonSign);
-        errorText=findViewById(R.id.ErorrSign);
+        fullNameEditText=findViewById(R.id.fullNameEditText);
+        emailEditText=findViewById(R.id.emailEditText);
+        passwordEditText=findViewById(R.id.passwordEditText);
+        repasswordEditText=findViewById(R.id.repasswordEditText);
+        registerButton=findViewById(R.id.registerButton);
+        errorText=findViewById(R.id.errorText);
+        //change
+        isadmin = findViewById(R.id.SwAdmin);
+        admincode = findViewById(R.id.etAdminCode);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,20 +79,31 @@ public class SignUpActivty extends AppCompatActivity {
         }
         if(!repasswordEditText.getText().toString().equals(passwordEditText.getText().toString())){
             errorText.setVisibility(View.VISIBLE);
-            errorText.setText("password doesn't match");
+            errorText.setText("password dosn't match");
             return;
         }
-        final FirebaseAuth mAuth= FirebaseAuth.getInstance();
+
+        //change
+        if(isadmin.isChecked() && !admincode.getText().toString().equals("13579")){
+            errorText.setVisibility(View.VISIBLE);
+            errorText.setText("admin code is incorrect");
+            return;
+        }
+        final FirebaseAuth mAuth=FirebaseAuth.getInstance();
         mAuth.createUserWithEmailAndPassword(emailEditText.getText().toString(), passwordEditText.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-
                             FirebaseUser user = mAuth.getCurrentUser();
-
-                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                                    .setDisplayName(fullNameEditText.getText().toString())
+                            //change
+                            String name=fullNameEditText.getText().toString();
+                            if(isadmin.isChecked()){
+                                name = "admin: "+name;
+                            }
+                            //change
+                            UserProfileChangeRequest  profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(name)
                                     .build();
 
                             user.updateProfile(profileUpdates)
@@ -99,6 +124,8 @@ public class SignUpActivty extends AppCompatActivity {
                         }
                     }
                 });
+
     }
+
 
 }

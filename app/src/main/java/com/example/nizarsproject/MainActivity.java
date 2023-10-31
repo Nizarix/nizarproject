@@ -14,6 +14,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nizarsproject.Client.Home;
+import com.example.nizarsproject.Client.card;
+import com.example.nizarsproject.Client.cart;
+import com.example.nizarsproject.Client.info;
+import com.example.nizarsproject.admin.AddProductActivity;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -47,9 +52,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user!=null){
+
+            if(user.getDisplayName().startsWith("admin:")){
+                Intent i = new Intent(MainActivity.this, AddProductActivity.class);
+                startActivity(i);
+            }
             View headr = navigationView.getHeaderView(0);
             userName = headr.findViewById(R.id.UserName);
-            userGmail = findViewById(R.id.UserGmail);
+            userGmail = headr.findViewById(R.id.UserGmail);
             userName.setText(user.getDisplayName());
             userGmail.setText(user.getEmail());
         }
@@ -58,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(i);
         }
     }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -75,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new cart()).commit();
         }
         else if(R.id.nav_logout==item.getItemId()){
-
+            fauth.signOut();
             startActivity(new Intent(this,LogInActivity.class));
             Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show();
         }
@@ -90,5 +101,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
     }
 }
