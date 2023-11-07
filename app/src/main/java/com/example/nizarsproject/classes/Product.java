@@ -22,6 +22,7 @@ public class Product implements SqlInterface{
     protected int stock;
     protected double saleprice;
     protected double buyprice;
+    protected byte[] imageByte;
 
     public Product(Product p) {
         pid = p.getPid();
@@ -36,15 +37,9 @@ public class Product implements SqlInterface{
 
     }
 
-    public byte[] getImageByte() {
-        return imageByte;
-    }
 
-    public void setImageByte(byte[] imageByte) {
-        this.imageByte = imageByte;
-    }
 
-    protected byte[] imageByte;
+
     //endregion
 
     //region Constructors
@@ -209,7 +204,19 @@ public class Product implements SqlInterface{
     public void setBuyprice(double buyprice) {
         this.buyprice = buyprice;
     }
+    public byte[] getImageByte() {
+        return imageByte;
+    }
+
+    public void setImageByte(byte[] imageByte) {
+        this.imageByte = imageByte;
+    }
+    @Override
+    public String toString() {
+        return prodname ;
+    }
     //endregion
+
 
 }
 

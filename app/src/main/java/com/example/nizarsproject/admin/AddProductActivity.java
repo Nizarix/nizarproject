@@ -131,8 +131,8 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
             if(p.Add(dbHelper.getDb())>-1){
                 Toast.makeText(this, "Added Successfully", Toast.LENGTH_SHORT).show();
                 dbHelper.Close();
-               // Intent i = new Intent(this,ShowProduct.class);
-                //startActivity(i);
+                Intent i = new Intent(this,ShowProduct.class);
+                startActivity(i);
             }
         }
         if(view.getId()==R.id.btUpdate){
@@ -150,16 +150,16 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
             p.Update(dbHelper.getDb(),Integer.parseInt(selectedId));
             dbHelper.Close();
             Toast.makeText(this, "Updated Successfully", Toast.LENGTH_SHORT).show();
-           // Intent i = new Intent(this, ShowProduct.class);
-            //startActivity(i);
+           Intent i = new Intent(this, ShowProduct.class);
+            startActivity(i);
         }
         if(view.getId()==R.id.btDelete){
             dbHelper.OpenWriteAble();
             p.Delete(dbHelper.getDb(),Integer.parseInt(selectedId));
             dbHelper.Close();
             Toast.makeText(this, "Deleted Successfully", Toast.LENGTH_SHORT).show();
-           // Intent i = new Intent(this,ShowProduct.class);
-            // startActivity(i);
+            Intent i = new Intent(this,ShowProduct.class);
+             startActivity(i);
         }
         if(view.getId()==R.id.imageButton){
             Intent gallery = new Intent(Intent.ACTION_PICK,

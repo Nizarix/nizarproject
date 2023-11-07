@@ -19,6 +19,7 @@ import com.example.nizarsproject.Client.card;
 import com.example.nizarsproject.Client.cart;
 import com.example.nizarsproject.Client.info;
 import com.example.nizarsproject.admin.AddProductActivity;
+import com.example.nizarsproject.admin.ShowProduct;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -54,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(user!=null){
 
             if(user.getDisplayName().startsWith("admin:")){
-                Intent i = new Intent(MainActivity.this, AddProductActivity.class);
+                Intent i = new Intent(MainActivity.this, ShowProduct.class);
                 startActivity(i);
             }
             View headr = navigationView.getHeaderView(0);
