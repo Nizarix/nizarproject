@@ -11,7 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-
+import com.example.nizarsproject.classes.ListAdapter;
 import com.example.nizarsproject.DataTable.DBHelper;
 import com.example.nizarsproject.R;
 import com.example.nizarsproject.classes.Product;
@@ -39,6 +39,7 @@ public class ShowProduct extends AppCompatActivity implements AdapterView.OnItem
         p = new Product();
         getProductToArray();
         ListAdapter adapter = new ListAdapter(this,product_info);
+
         productListview.setAdapter(adapter);
 
     }
