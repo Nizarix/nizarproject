@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.nizarsproject.Client.ProductInfo;
 import com.example.nizarsproject.R;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder( ViewGroup parent, int i) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.oneview, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.products_item, parent, false);
         return new ViewHolder(view);
 
     }
@@ -62,13 +63,15 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         // here we will find the views on which we will inflate our data
 
         TextView tvNameOfProduct, tvDescriptionOfProduct;
-        ImageView imageOfProduct;
+        ImageView imageOfProduct,addtocart;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
             tvNameOfProduct = itemView.findViewById(R.id.tvProductName);
             imageOfProduct = itemView.findViewById(R.id.img_product);
+
+            addtocart.setOnClickListener(this);
             itemView.setOnClickListener(this);
 
         }
@@ -76,7 +79,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.ViewHo
         @Override
         public void onClick(View v) {
 
-            Intent intent = new Intent(v.getContext(),ProductInfo.class);
+            Intent intent = new Intent(v.getContext(), ProductInfo.class);
             intent.putExtra("id",productList.get(getLayoutPosition()).getPid()+"");
             v.getContext().startActivity(intent);
         }
