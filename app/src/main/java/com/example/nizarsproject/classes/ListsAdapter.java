@@ -3,7 +3,6 @@ package com.example.nizarsproject.classes;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.icu.lang.UProperty;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.nizarsproject.R;
-import com.example.nizarsproject.classes.Product;
-
-public class ListAdapter extends BaseAdapter {
+public class ListsAdapter extends BaseAdapter {
     Context context;
     Product[] prudctlist;
     LayoutInflater layoutInflater;
-    public ListAdapter(Context context,Product[] prudctlist){
+    public ListsAdapter(Context context,Product[] prudctlist){
         this.context = context;
         this.prudctlist = prudctlist;
         layoutInflater = LayoutInflater.from(context);

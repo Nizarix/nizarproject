@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.nizarsproject.Client.Home;
+import com.example.nizarsproject.Client.HomeFragment;
 import com.example.nizarsproject.Client.card;
 import com.example.nizarsproject.Client.cart;
 import com.example.nizarsproject.Client.info;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Home()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_home);
         }
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if(R.id.nav_home==item.getItemId()){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Home()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
         }
         else if(R.id.nav_Card==item.getItemId()){

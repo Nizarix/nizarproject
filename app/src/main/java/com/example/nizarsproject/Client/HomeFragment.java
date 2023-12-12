@@ -8,11 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.provider.BaseColumns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.nizarsproject.classes.Product;
 import com.example.nizarsproject.classes.ProductsAdapter;
@@ -42,7 +40,7 @@ public class HomeFragment extends Fragment {
         Cursor c = p.Select(dbHelper.getDb());
         c.moveToFirst();
         while(!c.isAfterLast()){
-            p2 = new Product(c.getInt(c.getColumnIndexOrThrow(_ID)), p.setPid(c.getInt(c.getColumnIndexOrThrow(BaseColumns._ID)));
+            //p2 = new Product(c.getInt(c.getColumnIndexOrThrow(_ID)), p.setPid(c.getInt(c.getColumnIndexOrThrow(BaseColumns._ID)));
             p2.setProdname(c.getString(c.getColumnIndexOrThrow(COLUMN_PRODUCT_NAME)));
             p2.setProddisc(c.getString(c.getColumnIndexOrThrow(COLUMN_PRODUCT_DESCRIPTION)));
             p2.setBuyprice(c.getDouble(c.getColumnIndexOrThrow(COLUMN_PRODUCT_BUYPRICE)));
