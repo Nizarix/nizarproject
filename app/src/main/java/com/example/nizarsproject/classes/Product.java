@@ -153,7 +153,6 @@ public class Product implements SqlInterface{
         return c;
     }
 
-
     //endregion
 
     //region Setter and Getter
@@ -215,6 +214,8 @@ public class Product implements SqlInterface{
     public String toString() {
         return prodname ;
     }
+
+
     //endregion
 
 
