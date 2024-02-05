@@ -29,6 +29,12 @@ public class Cart implements SqlInterface{
     public Cart() {
 
     }
+
+    public Cart(String uid,int pid,int amount){
+        this.uid = uid;
+        prodid = pid;
+        this.amount=amount;
+    }
     //endregion
 
     //region Add,Delete,Update,Select Sql

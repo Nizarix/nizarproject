@@ -1,4 +1,4 @@
-package com.example.nizarsproject.User;
+package com.example.nizarsproject.Client;
 
 import static com.example.nizarsproject.DataTable.TablesString.ProductTable.COLUMN_PRODUCT_BUYPRICE;
 import static com.example.nizarsproject.DataTable.TablesString.ProductTable.COLUMN_PRODUCT_DESCRIPTION;
@@ -54,9 +54,7 @@ public class ProductInfo extends AppCompatActivity  {
         quantitynumber = findViewById(R.id.quantity);
         productname = findViewById(R.id.ProductNameInfo);
         productprice =findViewById(R.id.ProductPrice);
-        addKeyboard = findViewById(R.id.addKeyboard);
         addtoCart = findViewById(R.id.addtocart);
-        addMouse = findViewById(R.id.addCream);
         description = findViewById(R.id.descriptioninfo);
         dbHelper = new DBHelper(this);
         selectedid = getIntent().getExtras().getString("id");
@@ -87,7 +85,7 @@ public class ProductInfo extends AppCompatActivity  {
                     quantity++;
                     displayQuantity();
                     double prodPrice = basePrice * quantity;
-                    productprice.setText("â‚ª " + prodPrice);
+                    productprice.setText("₪ " + prodPrice);
                 }
 
             }
@@ -104,7 +102,7 @@ public class ProductInfo extends AppCompatActivity  {
                     quantity--;
                     displayQuantity();
                     double prodPrice = basePrice * quantity;
-                    productprice.setText("â‚ª " + prodPrice);
+                    productprice.setText("₪ " + prodPrice);
                 }
             }
         });

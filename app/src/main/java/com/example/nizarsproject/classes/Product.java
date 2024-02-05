@@ -31,6 +31,7 @@ public class Product implements SqlInterface{
         stock = p.getStock();
         saleprice = p.getSaleprice();
         buyprice = p.getBuyprice();
+        imageByte = p.getImageByte();
     }
 
     public Product() {

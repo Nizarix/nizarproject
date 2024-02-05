@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.BaseColumns;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -58,14 +59,7 @@ public class ShowProduct extends AppCompatActivity implements AdapterView.OnItem
                 p.setSaleprice(c.getDouble(c.getColumnIndexOrThrow(COLUMN_PRODUCT_SALEPRICE)));
                 p.setStock(c.getInt(c.getColumnIndexOrThrow(COLUMN_PRODUCT_STOCK)));
                 p.setImageByte(c.getBlob(c.getColumnIndexOrThrow(COLUMN_PRODUCT_IMAGE)));
-               /* if(cat.equals("PC"))
-                    product_info[i]=new PC(p);
-                else if(cat.equals("LabTop"))
-                    product_info[i]=new LabTop(p);
-                else if(cat.equals("Printer"))
-                    product_info[i]=new Printer(p);
-                else
-                    product_info[i]=new Other(p);*/
+
                 product_info[i]=new Product(p);
                 product_string[i++] = p.toString();
                 c.moveToNext();

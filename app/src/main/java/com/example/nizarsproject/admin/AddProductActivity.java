@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -43,6 +44,7 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
     Spinner spcategory;
     Product p;
     byte[] image;
+    byte[] data;
     boolean SelectedNewImage;
     String selectedId,selectedcategory = "";
     Uri selectedImageUri;
@@ -99,7 +101,7 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
         dbHelper.OpenReadAble();
         p=new Product();
         Cursor c = p.SelectById(dbHelper.getDb(),selectedId);
-        if(c!=null){
+        if(c!=null) {
             c.moveToFirst();
             etname.setText(c.getString(c.getColumnIndexOrThrow(COLUMN_PRODUCT_NAME)));
             etdisc.setText(c.getString(c.getColumnIndexOrThrow(COLUMN_PRODUCT_DESCRIPTION)));
@@ -108,8 +110,10 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
             etstock.setText(c.getString(c.getColumnIndexOrThrow(COLUMN_PRODUCT_STOCK)));
             image = c.getBlob(c.getColumnIndexOrThrow(COLUMN_PRODUCT_IMAGE));
             spcategory.setSelection(ad.getPosition(selectedcategory));
-            Bitmap bm = BitmapFactory.decodeByteArray(image, 0 ,image.length);
-            imageButton.setImageBitmap(bm);
+            if (image != null){
+                Bitmap bm = BitmapFactory.decodeByteArray(image, 0, image.length);
+                imageButton.setImageBitmap(bm);
+        }
         }
         dbHelper.Close();
 
@@ -120,8 +124,10 @@ public class AddProductActivity extends AppCompatActivity implements View.OnClic
         if(view.getId()==R.id.addButton){
             dbHelper.OpenWriteAble();
             dbHelper = new DBHelper(this);
+            if(imageViewToByte() != null){
+                data = imageViewToByte();
+            }
 
-            byte[] data  = imageViewToByte();
             p=new Product(etname.getText().toString(),etdisc.getText().toString(),
                     Integer.parseInt(etstock.getText().toString()),
                     Double.parseDouble(etsaleprice.getText().toString()),

@@ -48,13 +48,16 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         // here we will find the position and start setting the output on our views
 
 
+
         String prodname = productList.get(position).getProdname();
         byte[] images = productList.get(position).getImageByte();
-        Bitmap bm = BitmapFactory.decodeByteArray(images, 0 ,images.length);
+        Bitmap bm = BitmapFactory.decodeByteArray(images, 0, images.length);
+        holder.imageOfProduct.setImageBitmap(bm);
+
         pid = productList.get(position).getPid();
         uid = FirebaseAuth.getInstance().getUid();
         holder.tvname.setText(prodname);
-        holder.imageOfProduct.setImageBitmap(bm);
+
 
 
     }

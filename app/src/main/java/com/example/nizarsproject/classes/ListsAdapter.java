@@ -3,6 +3,8 @@ package com.example.nizarsproject.classes;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.icu.lang.UProperty;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.nizarsproject.R;
+
 public class ListsAdapter extends BaseAdapter {
     Context context;
     Product[] prudctlist;
@@ -43,8 +46,9 @@ public class ListsAdapter extends BaseAdapter {
         ImageView image = view.findViewById(R.id.imImage);
         textView.setText(prudctlist[i].toString());
         byte[] im = prudctlist[i].getImageByte();
-        Bitmap bm = BitmapFactory.decodeByteArray(im, 0 ,im.length);
+        Bitmap bm = BitmapFactory.decodeByteArray(im, 0, im.length);
         image.setImageBitmap(bm);
+
         return view;
     }
 }

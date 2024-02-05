@@ -14,15 +14,16 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.nizarsproject.Client.CartFragment;
 import com.example.nizarsproject.Client.HomeFragment;
-import com.example.nizarsproject.Client.card;
-import com.example.nizarsproject.Client.cart;
 import com.example.nizarsproject.Client.info;
-import com.example.nizarsproject.admin.AddProductActivity;
+import com.example.nizarsproject.DataTable.DBHelper;
 import com.example.nizarsproject.admin.ShowProduct;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import static com.example.nizarsproject.DataTable.QueryString.SQL_CREATE_CART;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -37,6 +38,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar); //Ignore red line errors
         setSupportActionBar(toolbar);
+
+        /*DBHelper dbHelper = new DBHelper(this);
+        dbHelper.OpenWriteAble();
+        dbHelper.getDb().execSQL(SQL_CREATE_CART);
+        dbHelper.Close();*/
+
         fauth = FirebaseAuth.getInstance();
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
@@ -78,13 +85,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         }
         else if(R.id.nav_Card==item.getItemId()){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new card()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CartFragment()).commit();
         }
         else if(R.id.nav_info==item.getItemId()){
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new info()).commit();
         }
         else if(R.id.nav_cart==item.getItemId()){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new cart()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new CartFragment()).commit();
         }
         else if(R.id.nav_logout==item.getItemId()){
             fauth.signOut();
