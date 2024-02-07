@@ -5,7 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="50dp"
+        >
         <ImageView
             android:id="@+id/img_product"
             android:layout_width="100dp"
@@ -16,13 +18,12 @@
 
         <TextView
             android:id="@+id/tvProductName"
-            android:layout_width="match_parent"
+            android:layout_width="50dp"
             android:layout_height="23dp"
             android:layout_marginTop="5dp"
-            android:paddingLeft="20dp"
+            android:textAlignment="center"
             android:text="fast food"
             android:textColor="#232323"
-            android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/img_product"
             app:layout_constraintStart_toStartOf="@id/img_product"

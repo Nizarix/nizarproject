@@ -122,7 +122,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                     if(i>1){
                         tvAmount.setText(String.valueOf(--i));
                         sum-=Double.parseDouble(tvJewelryPrice.getText().toString());
-                        totalprice.setText(sum + "$");
+                        totalprice.setText(sum + "₪");
                     }
                 }
             });
@@ -133,7 +133,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
                     if(i<max){
                         tvAmount.setText(String.valueOf(++i));
                         sum+=Double.parseDouble(tvJewelryPrice.getText().toString());
-                        totalprice.setText(sum + "$");
+                        totalprice.setText(sum + "₪");
                     }
                 }
             });

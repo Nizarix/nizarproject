@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -35,7 +36,10 @@ public class HomeFragment extends Fragment {
         recyclerView_top3 = view.findViewById(R.id.rec_view_meals_popular);
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(null));
-        recyclerView_top3.setLayoutManager(new LinearLayoutManager(null));
+
+        LinearLayoutManager layoutManager
+                = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerView_top3.setLayoutManager(layoutManager);
         productList = new ArrayList<>();
         productList_3 = new ArrayList<>();
         dbHelper = new DBHelper(inflater.getContext());
