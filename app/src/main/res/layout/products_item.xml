@@ -2,7 +2,8 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@android:color/transparent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,9 +22,9 @@
             android:layout_width="50dp"
             android:layout_height="23dp"
             android:layout_marginTop="5dp"
-            android:textAlignment="center"
             android:text="fast food"
-            android:textColor="#232323"
+            android:textAlignment="center"
+            android:textColor="#F8F5F5"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/img_product"
             app:layout_constraintStart_toStartOf="@id/img_product"

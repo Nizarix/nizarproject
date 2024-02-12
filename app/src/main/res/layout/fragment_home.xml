@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Client.HomeFragment"
     android:id="@+id/root_home"
-    android:background="@drawable/background1">
+    android:background="@drawable/background3">
 
 
 
@@ -50,8 +50,6 @@
                         android:layout_width="234dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Home"
-                        android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="25sp"
                         android:textStyle="bold" />
@@ -64,7 +62,7 @@
                     android:layout_marginTop="10dp"
 
                     android:text="Our latest fragrance"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/header"
@@ -76,7 +74,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="18dp"
                     android:text="Our top 3 most sold fragrances"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Our fragrances"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -131,7 +129,7 @@
                         android:id="@+id/recycler_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#00FFFFFF"
+                        android:background="@drawable/background3"
                         android:scrollbars="none" />
                 </androidx.cardview.widget.CardView>
 
@@ -139,7 +137,7 @@
                     android:id="@+id/rec_view_meals_popular"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="#00FFFFFF"
+                    android:background="@android:color/transparent"
                     android:scrollbars="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintStart_toStartOf="parent"
